@@ -364,6 +364,26 @@ section a {
   position: absolute;
 }
 
+#modal__description--title {
+  background-color: #E0DCD9;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+#modal__description--text {
+  font-size: 20px;
+  text-align: justify;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
 .modal {
   display: flex;
   background-color: white;
@@ -378,24 +398,6 @@ section a {
 }
 .modal__description {
   margin: 80px 80px 80px 0px;
-}
-.modal__description--title {
-  background-color: #E0DCD9;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 20px;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 36px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-.modal__description--text {
-  font-size: 20px;
-  text-align: justify;
-  font-weight: 400;
-  margin-bottom: 30px;
 }
 .modal__description--price {
   display: flex;
@@ -441,39 +443,112 @@ section a {
 .modal__description--quantite .more:hover, .modal__description--quantite .less:hover {
   color: #8D5BFF;
 }
-.modal__close {
+.modal #modal__close {
   margin-top: 40px;
   width: 60px;
   height: 60px;
   opacity: 0.5;
 }
-.modal__close:hover {
+.modal #modal__close:hover {
   opacity: 1;
 }
-.modal__close:before, .modal__close:after {
+.modal #modal__close:before, .modal #modal__close:after {
   position: absolute;
   content: " ";
   height: 45px;
   width: 5px;
   background-color: #333;
 }
-.modal__close:before {
+.modal #modal__close:before {
   transform: rotate(45deg);
 }
-.modal__close:after {
+.modal #modal__close:after {
   transform: rotate(-45deg);
 }
 
 .vanish {
-  display: flex;
-  flex-direction: row;
-  background-color: #E0DCD9;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 10px;
+}
+
+.select {
+  display: flex;
+  cursor: pointer;
+}
+
+#hide {
+  display: none;
+  cursor: pointer;
+}
+
+.custom-select {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.custom-select p {
+  font-weight: 700;
   font-size: 18px;
+  margin-right: 25px;
+  margin-top: 11px;
+}
+
+#conteneur {
+  text-transform: uppercase;
+}
+
+.new-select {
+  background-color: #E0DCD9;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  position: relative;
+  width: 150px;
+}
+
+.new-select.active {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.new-select::after {
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  content: "";
+  height: 10px;
+  position: absolute;
+  right: 20px;
+  transform: rotate(135deg);
+  vertical-align: top;
+  width: 10px;
+}
+
+.new-select.active::after {
+  transform: rotate(-45deg);
+}
+
+.select-items {
+  background-color: #E0DCD9;
+  border-radius: 0px 0px 5px 5px;
+  padding: 0px 10px 0px 10px;
+  width: 150px;
+}
+
+.select-items div {
+  border-top: 1px solid black;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.select-hide {
+  display: none;
 }
 
 .arrow {
@@ -483,6 +558,7 @@ section a {
   border-width: 15px 15px 0 15px;
   border-color: black transparent transparent transparent;
   margin: 0;
+  cursor: pointer;
 }
 
 .addPanier {
