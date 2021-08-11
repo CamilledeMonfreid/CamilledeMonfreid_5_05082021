@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang=fr>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="./sass/styles.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/e7f70850be.js" crossorigin="anonymous"></script>
+        <title>Orinoco</title>
+    </head>
+    
+    <body>
+        <header>
+            <img class="logo" src="images/logo_orinoco.png" alt="Logo de Orinoco">
+            <nav>
+                <ul>
+                    <li><a href="index.html" >Meubles</a></li>
+                    <li><a href="#">Peluches</a></li>
+                    <li><a href="#">Appareil photo</a></li>
+                    <li><a href="panier.html" id="panier" class="select" id="panier-select">Mon panier</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="payer">
+        <div class="totalPaiement">
+            <h1>Paiement</h1>
+            <p>(Total : 599€)</p>
+        </div>
+
+        <form action="" method="get" class="form">
+            <div class="form-example name">
+              <label for="name">Nom</label>
+              <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="form-example surname">
+                <label for="surname">Prénom</label>
+                <input type="text" name="surname" id="surname" required>
+            </div>
+
+            <div class="form-example mail">
+                <label for="email">Mail</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="form-example adresse" id="form_adresse">
+                <label for="adresse">Adresse</label>
+                <input type="text" name="adresse" id="adresse" required>
+            </div>
+
+            <div class="form-example phone">
+                <label for="phone">Téléphone</label>
+                <input type="text" name="phone" id="phone" required>
+            </div>
+
+            <div class="form-example carte">
+                <label for="carte">Numéro de carte</label>
+                <input type="text" name="carte" id="carte" required>
+            </div>
+
+            <div class="form-example cvv">
+                <label for="cvv">CVV</label>
+                <input type="text" name="cvv" id="cvv" required>
+            </div>
+            
+            <div class="form-example button">
+              <input type="submit" value="Paiement" id="button">
+            </div>
+          </form>
+        </section>
+
+        <footer>
+            <ul>
+                <li><a href="#">Nous contacter</a></li>
+                <li>•</li>
+                <li><a href="#">Confidentialité & cookies</a></li>
+                <li>•</li>
+                <li><a href="#">Mentions légales</a></li>
+            </ul>
+            <p>© 2021 Camille</p>
+        </footer>
+    </body>
+</html>
