@@ -360,10 +360,6 @@ section a {
   height: 1650px;
 }
 
-#essai {
-  position: absolute;
-}
-
 #modal__description--title {
   background-color: #E0DCD9;
   width: -webkit-fit-content;

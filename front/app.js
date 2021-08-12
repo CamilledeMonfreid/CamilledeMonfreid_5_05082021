@@ -4,12 +4,15 @@ const modalText = document.getElementById('modal__description--text')
 const modalPrice = document.getElementById('modalPrice')
 const modalClose = document.getElementById("modal__close")
 const modalSubmit = document.getElementById("submitPanier")
+
+/* Fermeture de la modale */
 function closeModal(){
     modal.style.display = "none";
 }
 modalClose.addEventListener("click",closeModal)
 modalSubmit.addEventListener("click",closeModal)
 
+/* Ajustement de la quantité */
 const quantite = document.getElementById("compteur")
 const more = document.getElementById("more")
 const less = document.getElementById("less")
@@ -25,7 +28,6 @@ more.addEventListener("click",add)
 less.addEventListener("click",remove)
 
 
-
 fetch('../back/data.json')
 .then((response)=>{
     const furnitureData =response.json();
@@ -39,6 +41,7 @@ fetch('../back/data.json')
             lienFurniture.id = furniture[i]._id
             section.appendChild(lienFurniture)
             
+            /* Ouverture et création de la modale */
             lienFurniture.addEventListener("click",launchModal)
             function launchModal() {
                     modal.style.display = "flex";
@@ -51,28 +54,13 @@ fetch('../back/data.json')
                         const photoModal = document.getElementById("modalPhoto")
                         photoModal.src = "images/oak_" + [i + 1] +".jpg"
 
-                        const selectionnerVarnish = document.getElementById("selectionner")
-
-
-                        function openSelection(){
-                            const hideVarnish = document.getElementById("hide")
-                            hideVarnish.style.display = "block"
-                        }
-                        selectionnerVarnish.addEventListener("click",openSelection)
-
                         const essai = document.getElementById("essai")
-                        
-
                         for(let t = 0; furniture[i].varnish.length;t++){
                             essai.options[essai.options.length]= new Option(furniture[i].varnish[t], [t]);
 
                         }
-
-                        
                     }
-            }
-
-
+                }
 
             let divFurniture = document.createElement("div")
             divFurniture.className = "produit"
@@ -118,7 +106,7 @@ fetch('../back/data.json')
 })
 
 
-/* Création de la liste déroulante pour trier les médias */
+/* Création de la liste déroulante pour sélectionner les finitions */
 const selectElt = document.querySelector("select");
 const selectDiv = document.querySelector("#conteneur");
 
