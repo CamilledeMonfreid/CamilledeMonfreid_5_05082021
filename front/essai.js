@@ -30,7 +30,7 @@ more.addEventListener("click",add)
 less.addEventListener("click",remove)
 
 
-fetch('../back/data.json')
+fetch('http://localhost:3000/api/furniture')
 .then((response)=>{
     const furnitureData =response.json();
     furnitureData.then((furniture)=>{
@@ -75,11 +75,13 @@ fetch('../back/data.json')
 
                     const newSelect = document.createElement("div");
                     newSelect.classList.add("new-select");
+                    newSelect.id = "id-new-select"
                     newSelect.innerHTML = selectElt.options[selectElt.selectedIndex].innerHTML;
                     selectDiv.appendChild(newSelect);
 
                     const newMenu = document.createElement("div");
                     newMenu.classList.add("select-items", "select-hide");
+                    newMenu.id = "id-select-items"
 
                     for(let option of selectElt.options){
                         const newOption = document.createElement("div");
@@ -114,16 +116,11 @@ fetch('../back/data.json')
                         this.classList.toggle("active");
                     }); 
 
-                    function removeDiv(){
-                        
-                        selectDiv.removeChild(newSelect)
-                        selectDiv.removeChild(newMenu)
                     
-                    }
-                    modalClose.addEventListener("click",removeDiv)
-                    modalSubmit.addEventListener("click",removeDiv)
                 }
             }
+
+            
             
             let divFurniture = document.createElement("div")
             divFurniture.className = "produit"
@@ -163,6 +160,57 @@ fetch('../back/data.json')
             priceDescriptionFurniture.textContent = furniture[i].price/100 +"€"
             divDescriptionFurniture.appendChild(priceDescriptionFurniture)
         }
+
+        
+
+        
     })
 })
+
+// Retire la liste des varnish avant d'en créer une nouvelle
+function removeDiv(){
+    let newEssai = document.getElementById("essai")
+    let newNewEssai = document.getElementById('id-new-select')
+    let newNewNewEssai = document.getElementById("id-select-items")
+    newEssai.remove()
+    newNewEssai.remove()
+    newNewNewEssai.remove()
+    console.log(newEssai)
+}
+modalClose.addEventListener("click",removeDiv)
+modalSubmit.addEventListener("click",removeDiv)
+
+// Local storage
+const addPanier = document.getElementById("submitPanier")
+addPanier.addEventListener("click",()=>{
+    console.log("ok")
+    const nameProduct = document.getElementById("modal__description--title")
+    const quantProduct = document.getElementById("compteur")
+    const priceProduct = document.getElementById("modalPrice")
+
+    let produitAddPanier = {
+        nomProduit : nameProduct.textContent,
+        quantiteProduit : quantProduct.textContent,   
+        prixProduit : priceProduct.textContent
+    }
+    console.log(produitAddPanier)
+
+    let produitStorage = JSON.parse(localStorage.getItem("produit"))
+    
+    console.log(produitStorage)
+    if(produitStorage){
+        produitStorage.push(produitAddPanier)
+        console.log(produitStorage)
+        localStorage.setItem("produit",JSON.stringify(produitStorage))
+        
+    } else{
+        produitStorage =[];
+        produitStorage.push(produitAddPanier)
+        console.log(produitStorage)
+        localStorage.setItem("produit",JSON.stringify(produitStorage))
+    }
+})    
+
+
+
 
