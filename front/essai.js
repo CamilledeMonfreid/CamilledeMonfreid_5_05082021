@@ -52,6 +52,11 @@ fetch('http://localhost:3000/api/furniture')
                 if(lienFurniture.id==furniture[i]._id){
                     console.log(furniture[i].name)
                     modalTitle.textContent = furniture[i].name
+                    const divModale = document.getElementById("modal_furniture")
+                    const newId = document.createElement("p")
+                    newId.id = "furnitureId"
+                    newId.textContent = furniture[i]._id
+                    divModale.appendChild(newId)
                     modalText.textContent =furniture[i].description
                     modalPrice.textContent = furniture[i].price /100 +"€"
                     const photoModal = document.getElementById("modalPhoto")
@@ -187,11 +192,13 @@ addPanier.addEventListener("click",()=>{
     const nameProduct = document.getElementById("modal__description--title")
     const quantProduct = document.getElementById("compteur")
     const priceProduct = document.getElementById("modalPrice")
+    const idProduct = document.getElementById("furnitureId")
 
     let produitAddPanier = {
         nomProduit : nameProduct.textContent,
-        quantiteProduit : quantProduct.textContent,   
-        prixProduit : priceProduct.textContent
+        quantiteProduit : quantProduct.textContent,  
+        prixProduit : priceProduct.textContent,
+        idProduit : idProduct.textContent
     }
     console.log(produitAddPanier)
 

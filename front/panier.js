@@ -1,4 +1,6 @@
 let produitStorage = JSON.parse(localStorage.getItem("produit"))
+
+console.log(produitStorage)
 let arrayStorage =[]
 
 
@@ -82,8 +84,14 @@ fetch('http://localhost:3000/api/furniture')
         let priceTotal = document.getElementById("totalPrice")
         let priceLivraisonTotal = totalPrice + 4.99
         priceTotal.textContent = "TOTAL (" + priceLivraisonTotal +"€)" 
+
+        
+        localStorage.setItem("totalPrice",JSON.stringify(priceLivraisonTotal))
     })
 })
+
+
+
 
 
 
