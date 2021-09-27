@@ -27,33 +27,38 @@
         <section class="payer">
             <div class="totalPaiement">
                 <h1>Paiement</h1>
-                <p>(Total : 599€)</p>
+                <p id="totalPriceConfirmation"></p>
             </div>
 
             <form action="confirmation.html" method="GET" class="form" id="formulaire" >
                 <div class="form-example name">
                     <label for="firstName">Nom</label>
                     <input type="text" name="firstName" id="firstName" required minlength="2">
+                    <p id="erreurPrenom">Veuillez entrer 2 caractères ou plus pour le champ du prénom.</p>
                 </div>
 
                 <div class="form-example surname">
                     <label for="lastName">Prénom</label>
                     <input type="text" name="lastName" id="lastName" required minlength="2">
+                    <p id="erreurNom">Veuillez entrer 2 caractères ou plus pour le champ du nom.</p>
                 </div>
 
                 <div class="form-example mail">
                     <label for="email">Mail</label>
                     <input type="email" name="email" id="email" required>
+                    <p id="erreurMail">Veuillez entrer une adresse mail valide.</p>
                 </div>
 
                 <div class="form-example adresse" id="form_adresse">
                     <label for="address">Adresse</label>
                     <input type="text" name="adress" id="address" required>
+                    <p id="erreurAdresse">Veuillez entrer 2 caractères ou plus pour le champ de l'adresse.</p>
                 </div>
 
                 <div class="form-example surname">
                     <label for="city">Ville</label>
                     <input type="text" name="city" id="city" required>
+                    <p id="erreurCity">Veuillez entrer 2 caractères ou plus pour le champ de la ville.</p>
                 </div>
 
                 
@@ -66,11 +71,9 @@
 
         <footer>
             <ul>
-                <li><a href="#">Nous contacter</a></li>
+                <li><a href="mailto:camille.de-monfreid@outlook.fr">Nous contacter</a></li>
                 <li>•</li>
-                <li><a href="#">Confidentialité & cookies</a></li>
-                <li>•</li>
-                <li><a href="#">Mentions légales</a></li>
+                <li><a href="mentionslegales.html">Mentions légales</a></li>
             </ul>
             <p>© 2021 Camille</p>
         </footer>

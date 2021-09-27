@@ -18,6 +18,7 @@ modalSubmit.addEventListener("click",closeModal)
 const quantite = document.getElementById("compteur")
 const more = document.getElementById("more")
 const less = document.getElementById("less")
+
 function add(){
     quantite.textContent ++
 }
@@ -52,11 +53,10 @@ fetch('http://localhost:3000/api/furniture')
                 if(lienFurniture.id==furniture[i]._id){
                     console.log(furniture[i].name)
                     modalTitle.textContent = furniture[i].name
-                    const divModale = document.getElementById("modal_furniture")
-                    const newId = document.createElement("p")
-                    newId.id = "furnitureId"
+
+                    const newId = document.getElementById("furnitureId")
                     newId.textContent = furniture[i]._id
-                    divModale.appendChild(newId)
+                    
                     modalText.textContent =furniture[i].description
                     modalPrice.textContent = furniture[i].price /100 +"€"
                     const photoModal = document.getElementById("modalPhoto")

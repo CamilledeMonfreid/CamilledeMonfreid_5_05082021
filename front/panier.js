@@ -3,7 +3,22 @@ let produitStorage = JSON.parse(localStorage.getItem("produit"))
 console.log(produitStorage)
 let arrayStorage =[]
 
+let viderPanier = document.getElementById("supprProducts")
+function vider(){
+    localStorage.clear()
+    location.reload()
+}
+viderPanier.addEventListener('click',vider)
 
+let goToFormulaire = document.getElementById("goToForm")
+goToFormulaire.style.cursor = "pointer"
+function validPanier(){
+    if(arrayStorage.length!=0){
+        goToFormulaire.href = "paiement.html"
+    }
+}
+
+goToFormulaire.addEventListener('click',validPanier)
 
 fetch('http://localhost:3000/api/furniture')
 .then((response)=>{
@@ -17,7 +32,6 @@ fetch('http://localhost:3000/api/furniture')
                     let totalPriceProduct=furniture[i].price/100* parseInt(produitStorage[y].quantiteProduit)     
                     arrayStorage.push(totalPriceProduct) 
                     
-
 
 
                 
@@ -58,6 +72,8 @@ fetch('http://localhost:3000/api/furniture')
                 let quantiteProduct = document.createElement("p")
                 quantiteProduct.textContent = produitStorage[y].quantiteProduit
                 newProductQuantite.appendChild(quantiteProduct)
+
+
 
                 
 
