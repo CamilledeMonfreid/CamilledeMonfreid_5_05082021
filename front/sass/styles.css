@@ -347,12 +347,197 @@ section a {
   margin-bottom: 60px;
 }
 
+@media (max-width: 1000px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: baseline;
+    width: calc(100% - 50px);
+    margin: 0px 25px;
+  }
+  header .logo {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 50px 0;
+  }
+  header nav {
+    margin: 0px;
+    width: 100%;
+  }
+
+  header nav ul {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0px;
+    padding: 0px;
+  }
+  header nav ul #one {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  header nav ul #one a {
+    font-size: 20px;
+  }
+  header nav ul li {
+    text-align: center;
+  }
+  header nav ul li a {
+    font-size: 15px;
+  }
+  header nav ul .select {
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+
+  aside {
+    display: none;
+  }
+
+  section {
+    flex-direction: column;
+    margin: 0px 25px;
+    width: 100%;
+  }
+  section a {
+    width: calc(100% - 50px);
+  }
+
+  #paiement {
+    align-items: flex-start;
+    margin-bottom: 50px;
+  }
+
+  .totalPaiement {
+    font-size: 25px;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 50px);
+  }
+
+  .confirmation h1 {
+    font-size: 25px;
+    margin: 25px 25px;
+  }
+
+  .confirmation img {
+    margin: 0px 25px;
+    width: calc(100% - 50px);
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  footer {
+    margin-top: 0px;
+  }
+
+  #panierProduct {
+    width: 100%;
+  }
+  #panierProduct .panier__contenu--produit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #panierProduct .panier__contenu--produit img {
+    width: 170px;
+  }
+
+  #panierTotal {
+    margin: 25px 0px;
+    width: calc(100% - 20px);
+  }
+
+  #confirm p {
+    width: calc(100% - 50px);
+    padding: 20px 0px;
+  }
+
+  #background {
+    position: absolute;
+  }
+
+  #modal_furniture {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+  }
+  #modal_furniture .modal__description {
+    margin: 0px 25px;
+  }
+  #modal_furniture .modal__description #modal__description--text {
+    font-size: 15px;
+  }
+  #modal_furniture .modal__description p {
+    width: calc(100% - 50px);
+  }
+  #modal_furniture .modal__description #modal__description--title {
+    width: calc(100% - 70px);
+    font-size: 30px;
+    margin: 0;
+  }
+  #modal_furniture .modal__description .modal__description--price, #modal_furniture .modal__description .modal__description--quantite {
+    width: calc(100% - 50px);
+    justify-content: flex-start;
+    font-size: 20px;
+    margin: 0;
+  }
+  #modal_furniture .modal__description .modal__description--price p, #modal_furniture .modal__description .modal__description--quantite p {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #modal_furniture .modal__description .modal__description--price .more, #modal_furniture .modal__description .modal__description--price .less, #modal_furniture .modal__description .modal__description--quantite .more, #modal_furniture .modal__description .modal__description--quantite .less {
+    font-size: 45px;
+  }
+  #modal_furniture .modal__description .modal__description--vanish {
+    flex-direction: column;
+    width: calc(100% - 50px);
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 20px;
+  }
+  #modal_furniture .modal__description .modal__description--vanish p {
+    padding: 10px 0px;
+  }
+  #modal_furniture .modal__description .modal__description--vanish .vanish {
+    padding: 10px 0px;
+  }
+  #modal_furniture #modal__close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    margin: 0px;
+  }
+
+  #submitPanier {
+    font-size: 15px;
+    padding: 20px;
+  }
+
+  #modalPhoto {
+    width: 80%;
+    height: 150px;
+    margin: 70px 25px 25px 25px;
+  }
+}
 .gifHomer {
   height: 350px;
 }
 
 #background {
-  position: absolute;
+  position: fixed;
   background: rgba(224, 220, 217, 0.65);
   width: 100%;
   height: 100%;
