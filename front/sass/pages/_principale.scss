@@ -1,0 +1,115 @@
+/* Mise en forme de la page d'accueil */
+@use '../abstracts/' as *;
+
+//Bannière de la page d'accueil
+aside{
+    margin: 0px 50px;
+
+    .banniere{
+        height: 330px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    p{
+        font-size: 36px;
+        position:absolute;
+        right: 175px;
+        top: 186px;
+        @include txtUppercase
+    }
+}
+
+//Section principale des produits
+section{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 20px 20px 70px; 
+    width: calc(100% - 90px);
+
+    a{
+        color: black;
+        margin-right: 70px;
+        text-decoration: none;
+        width: calc(33.33% - 70px);
+    }
+}
+
+//Chaque div de produits
+.produit{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    
+    //Nom du produit
+    .title{
+        font-size: 24px;
+        padding: 10px 0px;
+        position: absolute;
+        text-align: center;
+        top: -30px;
+        width: 248px;
+        @include nameProduct
+    }
+    
+    //Photo du produit
+    .photo{
+        height: 290px;
+        object-fit: cover;
+        width: calc(100% - 50px);
+    }
+
+    //Vanish du produit
+    ul{
+        display: flex;
+        justify-content: flex-start;
+        width: calc(100% - 50px);
+
+        li{
+            background-color: $bgtxt;
+            border-radius: 9px;
+            font-size: 14px;
+            margin-right: 5px;
+            margin-top: 10px;
+            padding: 7px;
+            @include txtUppercase
+        }
+    }
+
+    //Description du produit
+    .description{
+        align-items: center;
+        display: flex;
+        width: calc(100% - 50px);
+
+        &__text{
+            font-size: 14px;
+            font-weight: 400;
+            height: 30px;
+            margin-right: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap; 
+        }
+
+        &__price{
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }   
+    }
+}
+
+//Survole des produits
+.produit:hover{
+    transform: scale(1.01);
+    p,li{
+        color: $primaire;
+    }
+}
+

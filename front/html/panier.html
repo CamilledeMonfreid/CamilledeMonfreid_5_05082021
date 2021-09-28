@@ -2,7 +2,7 @@
 <html lang=fr>
     <head>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" href="./sass/styles.css"/>
+        <link rel="stylesheet" href="../styles.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -11,12 +11,13 @@
         <title>Orinoco</title>
     </head>
     
-    <body>
+    <body> 
+        <!--Header du site avec logo et menu de navigation-->
         <header>
-            <img class="logo" src="images/logo_orinoco.png" alt="Logo de Orinoco">
+            <img class="logo" src="../images/logo_orinoco.png" alt="Logo de Orinoco">
             <nav>
                 <ul>
-                    <li id="two"><a href="index.html">Meubles</a></li>
+                    <li id="two"><a href="../index.html">Meubles</a></li>
                     <li id="three"><a href="peluche.html">Peluches</a></li>
                     <li id="four"><a href="photo.html">Appareil photo</a></li>
                     <li id="one"><a href="#" id="panier" class="select" id="panier-select">Mon panier</a></li>
@@ -24,6 +25,7 @@
             </nav>
         </header>
 
+        <!--Contenu du panier et passage de commande-->
         <section class="panier">
             <div class="panier__contenu" id="panierProduct">
                 <h1>Votre panier</h1>
@@ -32,6 +34,7 @@
 
             <div class="panier__total" id="panierTotal">
                 <h2 id="totalPrice">Total</h2>
+                
                 <div class="panier__total--sous">
                     <p>Sous-total:</p>
                     <p class="price" id="panierSousTotal"></p>
@@ -42,7 +45,6 @@
                     <p class="price">4.99€</p>
                 </div>
 
-
                 <a class="addPanier" id="goToForm">Paiement</a>
                 
                 <div class="panier__total--paiement">
@@ -52,17 +54,15 @@
             </div>
         </section>
 
-
-
+        <!--Footer du site-->
         <footer>
             <ul>
                 <li><a href="mailto:camille.de-monfreid@outlook.fr">Nous contacter</a></li>
                 <li>•</li>
                 <li><a href="mentionslegales.html">Mentions légales</a></li>
             </ul>
-            
             <p>© 2021 Camille</p>
         </footer>
-        <script src="panier.js"></script>
+        <script src="../js/panier.js"></script>
     </body>
 </html>

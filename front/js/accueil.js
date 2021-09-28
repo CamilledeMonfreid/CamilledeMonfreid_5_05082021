@@ -9,8 +9,8 @@ const modalSubmit = document.getElementById("submitPanier")
 const selectDiv = document.querySelector("#conteneur");
 function closeModal(){
     modal.style.display = "none";
-
 }
+
 modalClose.addEventListener("click",closeModal)
 modalSubmit.addEventListener("click",closeModal)
 
@@ -30,14 +30,13 @@ function remove(){
 more.addEventListener("click",add)
 less.addEventListener("click",remove)
 
-
+//Fetch de l'API
 fetch('http://localhost:3000/api/furniture')
 .then((response)=>{
     const furnitureData =response.json();
     furnitureData.then((furniture)=>{
-        console.log(furniture)
         for(let i=0; i <furniture.length; i++){
-            let section = document.getElementById('sectionProduct')
+            let section = document.getElementById('product')
 
             let lienFurniture = document.createElement("a")
             lienFurniture.href = "#"
@@ -48,10 +47,8 @@ fetch('http://localhost:3000/api/furniture')
             lienFurniture.addEventListener("click",launchModal)
             function launchModal() {
                 modal.style.display = "flex";
-                console.log(lienFurniture.id)
 
                 if(lienFurniture.id==furniture[i]._id){
-                    console.log(furniture[i].name)
                     modalTitle.textContent = furniture[i].name
 
                     const newId = document.getElementById("furnitureId")
@@ -63,9 +60,7 @@ fetch('http://localhost:3000/api/furniture')
                     photoModal.src = "images/oak_" + [i + 1] +".jpg"
 
                     /* Création de la liste déroulante pour sélectionner les finitions */
-
-
-                    const essai = document.getElementById("try")
+                    const essai = document.getElementById("cust--select")
                     let selectElt = document.createElement("select");
                     selectElt.id = "essai"
                     essai.appendChild(selectElt)
@@ -76,7 +71,6 @@ fetch('http://localhost:3000/api/furniture')
                         optionsElt.textContent = furniture[i].varnish[j]
                         selectElt.appendChild(optionsElt)
                     }
-
 
                     const newSelect = document.createElement("div");
                     newSelect.classList.add("new-select");
@@ -120,12 +114,8 @@ fetch('http://localhost:3000/api/furniture')
                         this.nextSibling.classList.toggle("select-hide");
                         this.classList.toggle("active");
                     }); 
-
-                    
                 }
             }
-
-            
             
             let divFurniture = document.createElement("div")
             divFurniture.className = "produit"
@@ -165,14 +155,10 @@ fetch('http://localhost:3000/api/furniture')
             priceDescriptionFurniture.textContent = furniture[i].price/100 +"€"
             divDescriptionFurniture.appendChild(priceDescriptionFurniture)
         }
-
-        
-
-        
     })
 })
 
-// Retire la liste des varnish avant d'en créer une nouvelle
+// Retire la liste des vanish avant d'en créer une nouvelle
 function removeDiv(){
     let newEssai = document.getElementById("essai")
     let newNewEssai = document.getElementById('id-new-select')
@@ -180,15 +166,14 @@ function removeDiv(){
     newEssai.remove()
     newNewEssai.remove()
     newNewNewEssai.remove()
-    console.log(newEssai)
 }
+
 modalClose.addEventListener("click",removeDiv)
 modalSubmit.addEventListener("click",removeDiv)
 
 // Local storage
 const addPanier = document.getElementById("submitPanier")
 addPanier.addEventListener("click",()=>{
-    console.log("ok")
     const nameProduct = document.getElementById("modal__description--title")
     const quantProduct = document.getElementById("compteur")
     const priceProduct = document.getElementById("modalPrice")
@@ -200,20 +185,16 @@ addPanier.addEventListener("click",()=>{
         prixProduit : priceProduct.textContent,
         idProduit : idProduct.textContent
     }
-    console.log(produitAddPanier)
 
     let produitStorage = JSON.parse(localStorage.getItem("produit"))
     
-    console.log(produitStorage)
     if(produitStorage){
         produitStorage.push(produitAddPanier)
-        console.log(produitStorage)
         localStorage.setItem("produit",JSON.stringify(produitStorage))
         
     } else{
         produitStorage =[];
         produitStorage.push(produitAddPanier)
-        console.log(produitStorage)
         localStorage.setItem("produit",JSON.stringify(produitStorage))
     }
 })    

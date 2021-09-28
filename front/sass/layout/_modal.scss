@@ -1,0 +1,229 @@
+@use '../abstracts/' as *;
+
+//Mise en forme de la modal de présentation/personnalisation des produits
+#background{
+    align-items: baseline;
+    background: rgba(224, 220, 217, 0.65);
+    display: none;
+    height: 100%; 
+    justify-content: center;
+    left: 0;
+    margin: 0;
+    position:fixed;
+    width: 100%;
+    top:0; 
+}
+
+#modal__description--title{
+    font-size: 36px;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: fit-content;
+    @include nameProduct
+} 
+
+#modal__description--text{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+#furnitureId{
+    margin:10px 0px;
+}
+
+#modal__close {
+    margin-top: 40px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+
+    &:hover{
+        opacity: 1;
+    }
+
+    &:before, &:after {
+        position: absolute;
+        content: ' ';
+        height: 45px;
+        width: 5px;
+        background-color: #333;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+      }
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
+//Description des produits
+.modal{
+    background-color: white;
+    display: flex;
+    margin-top: 50px;
+    width: 80%;
+    
+    &__photo{
+        height: 500px;
+        margin: 80px 50px 80px 80px;
+        object-fit: cover;
+        width: 450px;
+    }
+
+    &__description{
+        margin: 80px 80px 80px 0px;
+        
+        &--price{
+            display: flex;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 30px;
+
+            p{
+                margin-right: 20px;
+            }
+        }
+
+        &--vanish{
+            align-items: center;
+            display: flex;
+            font-weight: 800;
+            font-size: 26px;
+            margin-bottom: 30px;
+
+            p{
+                margin-right: 20px;
+            }
+        }
+
+        &--quantite{
+            align-items: center;
+            display: flex;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-align: justify;
+
+            p{
+                margin-right: 30px;
+            }
+
+            .more, .less{
+                cursor: pointer;
+                font-size: 60px;
+                font-weight: 700;
+                margin-right: 20px;
+                width: fit-content;
+            }
+
+            .less{
+                padding-bottom: 5px;
+            }
+
+            .more:hover, .less:hover{
+                color: $primaire;
+            }
+        }
+    }
+}
+
+
+//Liste déroulante
+.vanish{
+    align-items: center;
+    justify-content: center;
+
+    .select{
+        cursor: pointer;
+        display: flex;
+    }
+    
+    #hide{
+        cursor: pointer;
+        display: none;
+    }
+    
+    .custom-select{
+        align-items: flex-start;
+        display: flex;
+        position: absolute;
+        z-index: 2;
+    }
+    
+    .custom-select select{
+        display: none;
+    }
+    
+    .custom-select p{
+        font-size: 18px;
+        font-weight: 700;
+        margin-right: 25px;
+        margin-top: 11px;
+    }
+    
+    #conteneur{
+        text-transform: uppercase;
+    }
+    
+    .new-select{
+        cursor: pointer;
+        background-color: $bgtxt;
+        border-radius: 5px;
+        font-size: 18px;
+        padding: 10px;
+        position: relative;
+        width: 150px;
+    }
+    
+    .new-select.active{
+        border-radius: 5px 5px 0px 0px;
+    }
+    
+    .new-select::after{
+        content: '';
+        border-style: solid;
+        border-width: 2px 2px 0 0;
+        height: 10px;
+        position: absolute;
+        right: 20px;
+        transform: rotate(135deg);
+        vertical-align: top;
+        width: 10px;
+    }
+    
+    .new-select.active::after{
+        transform: rotate(-45deg);
+    }
+    
+    .select-items{
+        background-color: $bgtxt;
+        border-radius: 0px 0px 5px 5px;
+        padding: 0px 10px 0px 10px;
+        width: 150px;
+    }
+    
+    .select-items div{
+        border-top: 1px solid black;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px;
+    }
+    
+    .select-hide{
+        display: none;
+    }
+    
+    .arrow{
+        border-color: black transparent transparent transparent;
+        border-style: solid;
+        border-width: 15px 15px 0 15px;
+        cursor: pointer;
+        margin: 0;
+        height: 0;
+        width: 0;
+    }
+}
+

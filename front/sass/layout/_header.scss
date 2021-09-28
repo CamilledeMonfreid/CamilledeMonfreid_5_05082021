@@ -2,46 +2,47 @@
 @use '../abstracts/' as *;
 
 header{
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
     margin: 0px 50px;
     width: calc(100% - 100px);
 
     nav{
-        width: calc(77.6% - 100px);
         margin-left: 100px;
+        width: calc(77.6% - 100px);
     }
 
 
     nav ul{
         display: flex;
-        width: 100%;
         justify-content: space-between;
         padding-top: 15px;
+        width: 100%;
 
         li a{
-            text-decoration: none;
             color: black;
-            font-weight: 600;
             font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
         }
    
         li a:hover, .select{
-            color: #E88408;
-            border-bottom: #E88408 solid 2px;
+            border-bottom: $secondaire solid 2px;
+            color: $secondaire;
         }
     }
 }
 
 #panier{
+    border: none;
     font-weight: 800;
     text-transform: uppercase;
-    border: none;
-}
 
-#panier:hover{
-    border-bottom: none;
+    &:hover{
+        border-bottom: none;
+    }
+    
 }
 
 .logo{

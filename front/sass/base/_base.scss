@@ -1,0 +1,206 @@
+//Media queries
+@media (max-width: 1000px) {
+    header{
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: baseline;
+        margin: 0px 25px;
+        width: calc(100% - 50px);
+        
+        .logo{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        nav{
+            margin: 0px;
+            width: 100%;
+        }
+
+        nav ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            
+            #one{
+                align-items: center;
+                grid-column: 1/4;
+                grid-row: 1/2;
+                padding-bottom: 20px;
+                text-align:  center;
+                width: 100%;
+                a{
+                    font-size: 20px;
+                }
+            }
+    
+            li{
+                text-align: center;
+
+                a{
+                    font-size: 15px;
+                }
+            }
+    
+            .select{
+                justify-content: center;
+                padding-bottom: 5px;
+                width: 100%;
+            }
+        }
+    }
+    
+    //Page d'accueil
+    aside{
+        display: none;
+    }
+
+    section{
+        flex-direction: column;
+        margin: 0px 25px;
+        width: 100%;
+        a{
+            width: calc(100% - 50px);
+        }
+    }
+    
+    //Page panier
+    #panierProduct{
+        width: 100%;
+
+        .panier__contenu--produit{
+            width: fit-content;
+            img{
+                width: 170px;
+            }
+        }
+    }
+
+
+    //Page paiement
+    #panierTotal{
+        margin: 25px 0px;
+        width: calc(100% - 20px);
+    }
+    
+
+    #paiement{
+        align-items: flex-start;
+        margin-bottom: 50px;
+
+        .totalPaiement{
+            font-size: 25px;
+            flex-direction: column;
+            align-items: center;
+            width: calc(100% - 50px);
+        }
+    
+    }
+    
+
+    footer{
+        margin-top:0px;
+    }
+
+    #background{
+        position: absolute;
+
+        #furniture{
+            flex-direction: column;
+            height: 100%;
+            margin:0 ;
+            width: 100%;
+    
+            .modal__description{
+                margin: 0px 25px;
+    
+                #modal__description--text{
+                    font-size: 15px;
+                }
+    
+                p{
+                    width: calc(100% - 50px);
+                    
+                }
+    
+                #modal__description--title{
+                    font-size: 30px;
+                    margin: 0;
+                    width: calc(100% - 70px);
+                }
+    
+                .modal__description--price, .modal__description--quantite{
+                    font-size: 20px;
+                    justify-content: flex-start;
+                    margin: 0;
+                    width: calc(100% - 50px);
+
+                    p{
+                        width: fit-content;
+                    }
+    
+                    .more, .less{
+                        font-size: 45px;
+                    }
+                }
+    
+                .modal__description--vanish{
+                    align-items: flex-start;
+                    flex-direction: column;
+                    font-size: 20px;
+                    justify-content: flex-start;
+                    width: calc(100% - 50px);
+
+                    p{
+                        padding: 10px 0px;
+                    }
+                    .vanish{
+                        padding: 10px 0px;
+                    }
+                }
+            }
+
+            #modal__close{
+                margin: 0px;
+                position: absolute;
+                right: 20px;
+                top:10px;
+            }
+
+            #submitPanier{
+                font-size: 15px;
+                padding: 20px;
+            }
+        
+            #modalPhoto{
+                height: 150px;
+                margin: 70px 25px 25px 25px;
+                width: 80%;
+            }
+        }
+    }
+
+    //Page de confirmation de commande
+    .confirmation h1{
+        font-size: 25px;
+        margin: 25px 25px;
+    }
+
+    .confirmation img{
+        margin: 0px 25px;
+        object-fit: cover;
+        width: calc(100% - 50px);
+    }
+
+    #confirm p{
+        padding: 20px 0px;
+        width: calc(100% - 50px);
+    }
+}

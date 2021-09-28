@@ -2,39 +2,36 @@
 <html lang=fr>
     <head>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" href="./sass/styles.css"/>
+        <link rel="stylesheet" href="../styles.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/e7f70850be.js" crossorigin="anonymous"></script>
         <title>Orinoco</title>
     </head>
     
     <body>
+        <!--Header du site avec logo et menu de navigation-->
         <header>
-            <img class="logo" src="images/logo_orinoco.png" alt="Logo de Orinoco">
+            <img class="logo" src="../images/logo_orinoco.png" alt="Logo de Orinoco">
             <nav>
                 <ul>
-                    <li id="two"><a href="index.html">Meubles</a></li>
+                    <li id="two"><a href="../index.html">Meubles</a></li>
                     <li id="three"><a href="peluche.html">Peluches</a></li>
-                    <li id="four"><a href="photo.html">Appareil photo</a></li>
+                    <li id="four"><a href="photo.html" class="select">Appareil photo</a></li>
                     <li id="one"><a href="panier.html" id="panier">Mon panier</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div class="confirmation" id="confirm">
-            <h1>Merci pour votre commande !</h1>
-            <img id="gifHom" class="gifHomer" src="images/gifHomer.gif" alt="Gif"> <br/>
-            <p id="orderIdText"></p>
-            <p id="mailConfirmation">Un mail de confirmation vous a été envoyé.</p>
+        <!--Message d'erreur-->
+        <div class="confirmation">
+            <h1>Souriez, <br/> les appareils photo feront bientôt leur apparition !</h1>
+            <img class="gifHomer" src="../images/gifphoto.gif" alt="Gif"> <br/>
         </div>
 
-        <div id="erreurConfirmation">
-            <p>OOPS, vous êtes perdus !</p>
-            <a href="index.html">Retournez au menu</a>
-        </div>
-
+        <!--Footer du site-->
         <footer>
             <ul>
                 <li><a href="mailto:camille.de-monfreid@outlook.fr">Nous contacter</a></li>
@@ -43,6 +40,5 @@
             </ul>
             <p>© 2021 Camille</p>
         </footer>
-        <script src="confirmation.js"></script>
     </body>
 </html>

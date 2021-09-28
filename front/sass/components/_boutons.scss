@@ -1,4 +1,40 @@
 /* Design des boutons du site */
 @use '../abstracts/' as *;
 
+.addPanier{
+    background-color: #8F5BFD;
+    font-size: 26px;
+    padding: 30px;
+    @include button;
+}
+
+#supprProducts{
+    background-color: grey;
+    font-size: 15px;   
+    padding: 10px;
+    margin-bottom: 30px;
+    @include button;
+
+    &:hover{
+        background-color: #8D5BFF;
+    }
+}
+
+#button{
+    background-color: $primaire;
+    font-size: 15px;
+    grid-column: 1/3;
+    justify-self: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    @include button;
+
+    &:hover{
+        background-color: #B998FE;
+        cursor: pointer;
+    }
+}
+
+
+
 
