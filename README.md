@@ -21,18 +21,21 @@ L’équipe est constituée de Jeanne, développeuse back-end travaillant sur le
 ## Éléments fournis
 ➡️ Le backend du site
 
-###Fonctionnalités attendues :
+### Fonctionnalités attendues :
 ➡️ Une page de vue sous forme de liste, montrant tous les articles disponibles à la vente  
 ➡️ Une page “produit”, qui affiche de manière dynamique l'élément sélectionné par l'utilisateur et lui permet de personnaliser le produit et de l'ajouter à son panier  
 ➡️ Une page “panier” contenant un résumé des produits dans le panier, le prix total et un formulaire permettant de passer une commande. Les données du formulaire doivent être correctes et bien formatées avant d'être renvoyées au back-end. Par exemple, pas de texte dans les champs date  
 ➡️ Une page de confirmation de commande, remerciant l'utilisateur pour sa commande, et indiquant le prix total et l'identifiant de commande envoyé par le serveur
 
+## Livrables (hors repo GitHub)  
+➡️ Un plan de test
+
 
 ## Compétences acquises 
-✅ Utiliser un système de gestion de versions pour le suivi du projet et son hébergement  
-✅ Mettre en place son environnement Front-End  
-✅ Intégrer du contenu conformément à une maquette  
-✅ Implémenter une interface responsive  
+✅ Créer un plan de test pour une application  
+✅ Interagir avec un web service avec JavaScript  
+✅ Valider des données issues de sources externes  
+✅ Gérer des événements JavaScript  
 
 ### Fonctionnement des projets Openclassrooms
 Il nous est fournit un scénario de projet permettant d'acquérir des compétences.  
