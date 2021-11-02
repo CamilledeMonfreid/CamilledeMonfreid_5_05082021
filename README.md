@@ -37,18 +37,3 @@ L’équipe est constituée de Jeanne, développeuse back-end travaillant sur le
 ### Fonctionnement des projets Openclassrooms
 Il nous est fournit un scénario de projet permettant d'acquérir des compétences.  
 Une fois le projet terminé, il est évalué via une soutenance. La soutenance est validé si les compétences sont acquises !
-
-
-# Orinoco #
-
-This is the back end server for Project 5 of the Junior Web Developer path.
-
-### Prerequisites ###
-
-You will need to have Node and `npm` installed locally on your machine.
-
-### Installation ###
-
-Clone this repo. From within the project folder, run `npm install`. You 
-can then run the server with `node server`. 
-
